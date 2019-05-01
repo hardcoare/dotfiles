@@ -28,7 +28,7 @@ filetype plugin indent on    " required
 colorscheme gruvbox
 set number
 syntax enable
-" set nowrap
+set nowrap
 set hlsearch
 
 let g:ale_fixers = {'python': ['autopep8']}
