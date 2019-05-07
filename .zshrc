@@ -1,13 +1,18 @@
+# Load Zsh tools for syntax highlighting and autosuggestions
+
 export ZSH=/Users/tyler/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+# ZSH_THEME="mh"
 
-# If using MacOS
 HOMEBREW_FOLDER="/usr/local/share"
 source "$HOMEBREW_FOLDER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOMEBREW_FOLDER/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_FOLDER/zsh-output-highlighting/zsh-output-highlighting.zsh"
 
-# ZSH THEME
+
+# mh theme
+# preview: https://cl.ly/1y2x0W0E3t2C0F29043z
+
 # features:
 # path is autoshortened to ~30 characters
 # displays git status (if applicable in current folder)
@@ -33,9 +38,11 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40
 #Shortcuts
 alias ls="ls -G"
 alias weather="curl wttr.in/London"
-#Wacky alias for MacVim which is needed for YouCompleteMe
-alias vim="ycmvim"
+alias vim="ycmvim -X"
 alias cdh="cd /Users/tyler/Desktop/apps"
+
+#Cat but with syntax highlighting and line numbers
+alias ccat="pygmentize -g"
 
 #Pretty git diff
 alias gitdiff='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
@@ -43,17 +50,14 @@ alias gitdiff='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
 #Binds Del to delete
 bindkey "^[[3~" delete-char
 
-#Allows me to use $cheat to git information for a command
 function cheat() {
       curl -s cht.sh/$1
   }
 
-#Don't actually know what this is
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
 
-#Path variable for MacOS
 export PATH=/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages:$PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="/Users/tyler/.cargo/bin":$PATH
