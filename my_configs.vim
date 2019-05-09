@@ -2,7 +2,7 @@ set nocompatible              " be iMproved
 colorscheme gruvbox 
 set number                    
 syntax enable
-set nowrap
+" set nowrap
 set hlsearch
 set noshowmode
 
@@ -17,3 +17,10 @@ let g:rustfmt_autosave = 1
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ }
+
+" Allows for unlimited undo
+if !isdirectory($HOME . "/.vim/undodir")
+      call mkdir($HOME . "/.vim/undodir", "p")
+  endif
+  set undofile
+  set undodir=~/.vim/undodir
