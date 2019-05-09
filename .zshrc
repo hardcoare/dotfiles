@@ -47,9 +47,6 @@ alias ccat="pygmentize -g"
 #Pretty git diff
 alias gitdiff='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
 
-#Runs previous command as root
-alias fuck='sudo !!'
-
 #Binds Del to delete
 bindkey "^[[3~" delete-char
 
