@@ -9,7 +9,6 @@ source "$HOMEBREW_FOLDER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$HOMEBREW_FOLDER/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$HOMEBREW_FOLDER/zsh-output-highlighting/zsh-output-highlighting.zsh"
 
-
 # mh theme
 # preview: https://cl.ly/1y2x0W0E3t2C0F29043z
 
@@ -38,8 +37,9 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=00;36:pi=40;33:so=01;35:do=01;35:bd=40
 #Shortcuts
 alias ls="ls -G"
 alias weather="curl wttr.in/London"
-alias vim="ycmvim -X"
 alias cdh="cd /Users/tyler/Desktop/apps"
+alias fuck="git reset HEAD^"
+alias doublefuck="git reset 'HEAD@{1}'"
 
 #Cat but with syntax highlighting and line numbers
 alias ccat="pygmentize -g"
@@ -47,9 +47,12 @@ alias ccat="pygmentize -g"
 #Pretty git diff
 alias gitdiff='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
 
-#Binds Del to delete
+#Keybindings
 bindkey "^[[3~" delete-char
+bindkey "^[^[[D" backward-word
+bindkey "^[^[[C" forward-word
 
+#Cheat function
 function cheat() {
       curl -s cht.sh/$1
   }
@@ -58,6 +61,7 @@ autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select
 
+#Additional PATH
 export PATH=/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages:$PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="/Users/tyler/.cargo/bin":$PATH
