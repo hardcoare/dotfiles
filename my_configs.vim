@@ -24,3 +24,5 @@ if !isdirectory($HOME . "/.vim/undodir")
   endif
   set undofile
   set undodir=~/.vim/undodir
+
+inoremap <C-e> <C-o>A
