@@ -144,3 +144,5 @@ chunkc tiling::rule --owner Emacs --except "^$" --state tile &
 chunkc tiling::rule --owner Jabber --state float &
 chunkc tiling::rule --owner Microsoft Outlook --state float &
 chunkc tiling::rule --owner Python --state float &
+chunkc tiling::rule --owner Finder --state float &
+chunkc tiling::rule --owner Cisco Webex Meetings --state float &

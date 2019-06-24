@@ -13,6 +13,9 @@ let g:ale_linters = {'python': ['pylint']}
 " rust autosave
 let g:rustfmt_autosave = 1
 
+" formats with goimports instead fo gofmt
+let g:go_fmt_command = "goimports"
+
 " lightline Colorscheme config
 let g:lightline = {
       \ 'colorscheme': 'seoul256',

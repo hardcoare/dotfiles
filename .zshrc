@@ -2,7 +2,9 @@
 
 export ZSH=/Users/tyler/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-# ZSH_THEME="mh"
+
+# Plugins
+plugins=(dirhistory web-search brew git git-extras python)
 
 HOMEBREW_FOLDER="/usr/local/share"
 source "$HOMEBREW_FOLDER/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
@@ -40,9 +42,6 @@ alias weather="curl wttr.in/London"
 alias cdh="cd /Users/tyler/Desktop/apps"
 alias fuck="git reset HEAD^"
 alias doublefuck="git reset 'HEAD@{1}'"
-
-#Cat but with syntax highlighting and line numbers
-alias ccat="pygmentize -g"
 
 #Pretty git diff
 alias gitdiff='git difftool -y -x "colordiff -y -W $COLUMNS" | less -R'
